@@ -22,9 +22,21 @@ clean console proves nothing here.
    against the live site, never from computed styles.**
 
 2. **`.carousel` must keep its fixed `height: 400px`.** Until slick initialises the
-   three 400px images stack vertically (~1200px) and then collapse to one 400px
-   row, shifting the page up ~800px. That was 0.266 of Cumulative Layout Shift;
-   reserving the height makes it 0.
+   three images stack vertically and then collapse to one 400px row, shifting the
+   page up ~800px. That was 0.266 of Cumulative Layout Shift; reserving the height
+   makes it 0.
+
+3. **Every slide must stay a wrapper `<div class="slide">`, never a bare `<img>`.**
+   Slick writes the slide width as an *inline style* onto whatever the direct
+   children of `.carousel` are. With bare `<img>` children it set
+   `style="width: 600px"` on each image, stretching all three covers to the slide
+   width and distorting the two portrait ones. The wrapper takes that inline width
+   instead, leaving the image free to keep its own proportions.
+
+   Relatedly, size the image with `max-height`/`max-width`, not a fixed `height`.
+   A fixed `height: 400px` plus `max-width: 100%` squashes the landscape cover as
+   soon as the viewport is narrower than the image — it passed on desktop and
+   failed only at mobile widths, so check both.
 
 ## jQuery and slick are pinned with SRI
 

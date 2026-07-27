@@ -69,10 +69,23 @@
       height: 400px;
       overflow: hidden;
     }
-    .carousel img {
+    /* Centre each cover in its slide, vertically too, since a landscape image is
+       shorter than the reserved 400px box on narrow screens. */
+    .carousel .slide {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
       height: 400px;
-      width: auto;
+    }
+
+    .carousel img {
+      /* Bound the image on both axes and let it scale, so it keeps its own
+         proportions at every viewport width. A fixed height with max-width:100%
+         squashes landscape covers once the container is narrower than the image. */
+      max-height: 400px;
       max-width: 100%;
+      width: auto;
+      height: auto;
       /*object-fit: cover;*/
     }
     .btn {
@@ -194,10 +207,13 @@
         מנורת המאור / ציון טל (בוטא)
     </h1>
 
+    <!-- Each slide is the wrapper div, not the <img>. Slick writes the slide width
+         inline onto whatever the direct children are; with bare <img> children it
+         stretched every cover to the full 600px slide width and distorted them. -->
     <div class="carousel">
-      <img src="images/1.png" width="346" height="479" alt="כריכת הספר מנורת המאור מפורש ומבואר בניקוד תימני, מאת ציון טל (בוטא)">
-      <img src="images/2.png" width="377" height="422" alt="שער הספר מנורת המאור לרבנו יצחק אבוהב הספרדי">
-      <img src="images/3.png" width="612" height="408" loading="lazy" alt="עמוד לדוגמה מתוך ספר מנורת המאור המנוקד והמבואר">
+      <div class="slide"><img src="images/1.png" width="346" height="479" alt="כריכת הספר מנורת המאור מפורש ומבואר בניקוד תימני, מאת ציון טל (בוטא)"></div>
+      <div class="slide"><img src="images/2.png" width="377" height="422" alt="שער הספר מנורת המאור לרבנו יצחק אבוהב הספרדי"></div>
+      <div class="slide"><img src="images/3.png" width="612" height="408" loading="lazy" alt="עמוד לדוגמה מתוך ספר מנורת המאור המנוקד והמבואר"></div>
     </div>
 
 

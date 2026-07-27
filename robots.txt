@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Old drafts of the home page carry <meta name="robots" content="noindex">.
+# They are deliberately left crawlable so that the noindex is actually seen and
+# honoured - blocking them here instead would leave any stale copies indexed.
+
+# Internal working document, not for search results
+Disallow: /demo/*.doc$
+
+Sitemap: https://menorat-hamaor.co.il/sitemap.xml

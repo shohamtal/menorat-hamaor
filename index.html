@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 
 <!--edit with: https://onlinehtmleditor.dev/-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מנורת המאור / ציון טל (בוטא)</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+
+  <title>מנורת המאור מפורש ומבואר בניקוד תימני | ציון טל (בוטא)</title>
+  <meta name="description"
+        content="ספר מנורת המאור לרבנו יצחק אבוהב – מנוקד בניקוד תימני ומבואר בעברית בת ימינו מאת ציון טל (בוטא). כ-120 פרקים לפי פרשות השבוע והמועדים, קטעים לטעימה והסכמות.">
+  <link rel="canonical" href="https://menorat-hamaor.co.il/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="author" content="ציון טל (בוטא)">
+  <meta name="theme-color" content="#4CAF50">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="book">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="מנורת המאור / ציון טל (בוטא)">
+  <meta property="og:title" content="מנורת המאור מפורש ומבואר בניקוד תימני | ציון טל (בוטא)">
+  <meta property="og:description"
+        content="ספר מנורת המאור לרבנו יצחק אבוהב הספרדי – מנוקד בניקוד תימני, מפורש ומבואר בעברית בת ימינו מאת ציון טל (בוטא). כ-120 פרקים לפי פרשות השבוע והמועדים.">
+  <meta property="og:url" content="https://menorat-hamaor.co.il/">
+  <meta property="og:image" content="https://menorat-hamaor.co.il/images/1.png">
+  <meta property="og:image:width" content="346">
+  <meta property="og:image:height" content="479">
+  <meta property="og:image:alt" content="כריכת הספר מנורת המאור מפורש ומבואר">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="מנורת המאור מפורש ומבואר בניקוד תימני | ציון טל (בוטא)">
+  <meta name="twitter:description"
+        content="ספר מנורת המאור לרבנו יצחק אבוהב הספרדי – מנוקד בניקוד תימני, מפורש ומבואר בעברית בת ימינו מאת ציון טל (בוטא).">
+  <meta name="twitter:image" content="https://menorat-hamaor.co.il/images/1.png">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha384-ZwVa1S/NX6dEzJaHv2OILVrnj7ERqTH6pd/ubsDTHTrgAEz2kUufO/KLo6frtnOB"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
   <style>
     body {
       text-align: center;
@@ -27,9 +58,21 @@
     }
     .carousel {
       margin-top: 40px;
+      /* The document is dir="rtl" for the Hebrew content, but slick positions its
+         track with LTR float/translate math - inheriting RTL pushes every slide
+         off-screen. Keep this subtree LTR. */
+      direction: ltr;
+      /* Reserve the final one-slide height up front. Until slick initialises the
+         three 400px images stack vertically (~1200px) and then collapse to a
+         single 400px row, shifting the whole page up - that was most of the
+         Cumulative Layout Shift. */
+      height: 400px;
+      overflow: hidden;
     }
     .carousel img {
       height: 400px;
+      width: auto;
+      max-width: 100%;
       /*object-fit: cover;*/
     }
     .btn {
@@ -53,18 +96,108 @@
         margin: auto;
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://menorat-hamaor.co.il/#website",
+        "url": "https://menorat-hamaor.co.il/",
+        "name": "מנורת המאור / ציון טל (בוטא)",
+        "description": "ספר מנורת המאור לרבנו יצחק אבוהב הספרדי, מנוקד בניקוד תימני ומבואר בעברית בת ימינו",
+        "inLanguage": "he"
+      },
+      {
+        "@type": "Book",
+        "@id": "https://menorat-hamaor.co.il/#book",
+        "name": "מנורת המאור מפורש ומבואר",
+        "alternateName": "מנורת המאור",
+        "url": "https://menorat-hamaor.co.il/",
+        "image": "https://menorat-hamaor.co.il/images/1.png",
+        "inLanguage": "he",
+        "bookFormat": "https://schema.org/Hardcover",
+        "genre": ["ספרי מוסר", "אגדות חז\"ל", "יהדות תימן"],
+        "about": "אגדות חז\"ל ומוסר על פי מנורת המאור, מסודר לפי פרשות השבוע והמועדים",
+        "description": "ספר מנורת המאור לרבנו יצחק אבוהב הספרדי, מנוקד ומוגה בניקוד תימני, מפורש ומבואר עם סימני שאלה ותמיהה. כ-120 פרקים מובחרים בהתאם לפרשות השבוע, המועדים ואירועים בחיי האדם, מתוך כ-340 פרקי הספר.",
+        "author": {
+          "@type": "Person",
+          "name": "רבנו יצחק אבוהב הספרדי",
+          "description": "מחבר ספר מנורת המאור, חי במאות השלוש עשרה והארבע עשרה בספרד"
+        },
+        "editor": {
+          "@id": "https://menorat-hamaor.co.il/#editor"
+        },
+        "contributor": {
+          "@id": "https://menorat-hamaor.co.il/#editor"
+        },
+        "publisher": {
+          "@id": "https://menorat-hamaor.co.il/#publisher"
+        },
+        "workExample": [
+          {
+            "@type": "Book",
+            "name": "מנורת המאור – פרשת בראשית (קטע לטעימה)",
+            "url": "https://menorat-hamaor.co.il/demo/bereshit.pdf",
+            "inLanguage": "he",
+            "encodingFormat": "application/pdf"
+          },
+          {
+            "@type": "Book",
+            "name": "מנורת המאור – פרשת משפטים (קטע לטעימה)",
+            "url": "https://menorat-hamaor.co.il/demo/mishpatim.pdf",
+            "inLanguage": "he",
+            "encodingFormat": "application/pdf"
+          },
+          {
+            "@type": "Book",
+            "name": "מנורת המאור – פרשת ויקרא (קטע לטעימה)",
+            "url": "https://menorat-hamaor.co.il/demo/vayikra.pdf",
+            "inLanguage": "he",
+            "encodingFormat": "application/pdf"
+          }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://menorat-hamaor.co.il/#editor",
+        "name": "ציון טל (בוטא)",
+        "alternateName": "טל ציון",
+        "description": "כתב וערך את הביאור לספר מנורת המאור. נולד במגדיאל בשנת תש\"י, יועץ מס בהוד השרון, כתב את חיבורו בין השנים תש\"ס–תש\"ע.",
+        "birthPlace": "מגדיאל",
+        "jobTitle": "יועץ מס",
+        "knowsAbout": ["מנורת המאור", "ניקוד תימני", "אגדות חז\"ל", "מסורת הקריאה של יהודי תימן"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://menorat-hamaor.co.il/#publisher",
+        "name": "מו\"ל – טל ציון",
+        "url": "https://menorat-hamaor.co.il/",
+        "telephone": ["+972-9-7401112", "+972-54-7334550"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "רחוב נטעים 35",
+          "addressLocality": "הוד השרון",
+          "addressCountry": "IL"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+<main>
   <div class="container">
     <h1>
         מנורת המאור / ציון טל (בוטא)
     </h1>
 
     <div class="carousel">
-      <img src="images/1.png" style="" alt="תמונה 1">
-      <img src="images/2.png" style=""  alt="תמונה 2">
-      <img src="images/3.png" style=""  alt="תמונה 3">
+      <img src="images/1.png" width="346" height="479" alt="כריכת הספר מנורת המאור מפורש ומבואר בניקוד תימני, מאת ציון טל (בוטא)">
+      <img src="images/2.png" width="377" height="422" alt="שער הספר מנורת המאור לרבנו יצחק אבוהב הספרדי">
+      <img src="images/3.png" width="612" height="408" loading="lazy" alt="עמוד לדוגמה מתוך ספר מנורת המאור המנוקד והמבואר">
     </div>
 
 
@@ -78,7 +211,7 @@
 
   <p style="text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:24.0pt"><span style="font-family:&quot;David&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ספר</span></span></span></span></p>
 
-<h1 style="margin-right:-27px; text-align:justify"><span style="font-size:60pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:42.0pt"><span style="font-family:&quot;David&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; מנורת המאור</span></span></span></span></h1>
+<h2 style="margin-right:-27px; text-align:justify"><span style="font-size:60pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:42.0pt"><span style="font-family:&quot;David&quot;,sans-serif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; מנורת המאור</span></span></span></span></h2>
 
 <p style="text-align:justify">&nbsp;</p>
 
@@ -240,22 +373,31 @@
 
 
 
-    <div><h3>לעיון וטעימה של קטעים מפרקי הספר </h3></div>
-    <a href="demo/bereshit.pdf" target="_blank" title="פרשת בראשית">פרשת בראשית</a><span> | </span>
-    <a href="demo/mishpatim.pdf" target="_blank" title="פרשת משפטים">פרשת משפטים</a><span> | </span>
-    <a href="demo/vayikra.pdf" target="_blank" title="פרשת ויקרא">פרשת ויקרא</a><span>
+    <div dir="rtl">
+      <h2>לעיון וטעימה של קטעים מפרקי הספר</h2>
+      <p>
+        <a href="demo/bereshit.pdf" target="_blank" rel="noopener" title="מנורת המאור מבואר – פרשת בראשית (PDF)">פרשת בראשית</a><span> | </span>
+        <a href="demo/mishpatim.pdf" target="_blank" rel="noopener" title="מנורת המאור מבואר – פרשת משפטים (PDF)">פרשת משפטים</a><span> | </span>
+        <a href="demo/vayikra.pdf" target="_blank" rel="noopener" title="מנורת המאור מבואר – פרשת ויקרא (PDF)">פרשת ויקרא</a>
+      </p>
 
+      <h2>לצפייה בהסכמות לספר</h2>
+      <p>
+        <a href="demo/haskamot-razabi.pdf" target="_blank" rel="noopener" title="הסכמת הרב יצחק רצאבי לספר מנורת המאור (PDF)">הסכמת הרב רצאבי</a><span> | </span>
+        <a href="demo/haskamot-mahpud.pdf" target="_blank" rel="noopener" title="הסכמת הרב מחפוד לספר מנורת המאור (PDF)">הסכמת הרב מחפוד</a><span> | </span>
+        <a href="demo/haskamot-basis.pdf" target="_blank" rel="noopener" title="הסכמת הרב בסיס לספר מנורת המאור (PDF)">הסכמת הרב בסיס</a><span> | </span>
+        <a href="demo/haskamot-gamliel.pdf" target="_blank" rel="noopener" title="הסכמת הרב גמליאל לספר מנורת המאור (PDF)">הסכמת הרב גמליאל</a><span> | </span>
+        <a href="demo/haskamot-arusi.pdf" target="_blank" rel="noopener" title="הסכמת הרב ערוסי לספר מנורת המאור (PDF)">הסכמת הרב ערוסי</a>
+      </p>
+    </div>
+</main>
 
-    <div><h3>לצפייה בהסכמות לספר</h3></div>
-    <a href="demo/haskamot-razabi.pdf" target="_blank" title="הסכמת הרב רצאבי">הסכמת הרב רצאבי</a><span> | </span>
-    <a href="demo/haskamot-mahpud.pdf" target="_blank" title="הסכמת הרב מחפוד">הסכמת הרב מחפוד</a><span> | </span>
-    <a href="demo/haskamot-basis.pdf" target="_blank" title="הסכמת הרב בסיס">הסכמת הרב בסיס</a><span> | </span>
-    <a href="demo/haskamot-gamliel.pdf" target="_blank" title="הסכמת הרב גמליאל">הסכמת הרב גמליאל</a><span> | </span>
-    <a href="demo/haskamot-arusi.pdf" target="_blank" title="הסכמת הרב ערוסי">הסכמת הרב ערוסי</a><span> | </span>
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+          integrity="sha384-YGnnOBKslPJVs35GG0TtAZ4uO7BHpHlqJhs0XK3k6cuVb6EBtl+8xcvIIOKV5wB+"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     $(document).ready(function() {
       $('.carousel').slick({

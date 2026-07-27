@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img"
+     aria-label="מנורת המאור">
+  <title>מנורת המאור</title>
+  <rect width="64" height="64" rx="10" fill="#5b2b17"/>
+  <g fill="none" stroke="#f0c04a" stroke-width="4"
+     stroke-linecap="round" stroke-linejoin="round">
+    <!-- central stem -->
+    <path d="M32 22v24"/>
+    <!-- three arched branches on each side -->
+    <path d="M32 34c0-8-4-12-9-12s-9 4-9 12"/>
+    <path d="M32 34c0-8 4-12 9-12s9 4 9 12"/>
+    <path d="M32 30c0-6-3-9-6.5-9"/>
+    <path d="M32 30c0 -6 3-9 6.5-9"/>
+    <!-- base -->
+    <path d="M23 50h18"/>
+    <path d="M32 46v4"/>
+  </g>
+  <!-- seven flames -->
+  <g fill="#ffe9a8">
+    <circle cx="14" cy="19" r="2.6"/>
+    <circle cx="25.5" cy="18" r="2.6"/>
+    <circle cx="32" cy="16" r="3"/>
+    <circle cx="38.5" cy="18" r="2.6"/>
+    <circle cx="50" cy="19" r="2.6"/>
+  </g>
+</svg>

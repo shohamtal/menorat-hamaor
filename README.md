@@ -20,16 +20,25 @@ as-is, so anything committed here goes live.
 | `CNAME` | Custom domain for GitHub Pages |
 | `google256c1f51882b8dbb.html` | Google Search Console verification |
 
-### Superseded drafts — do not link to these
+### Removed drafts
 
-`index-10-12-2023.html`, `index-16-11-2023.html` and `gpt-index2.html` are older
-drafts kept for reference. They each carry `<meta name="robots" content="noindex,
-nofollow">` and a canonical pointing at the home page, and are deliberately left
-crawlable so the `noindex` is actually seen and honoured — blocking them in
-`robots.txt` instead would leave any already-indexed copies stuck in the index.
+`index-10-12-2023.html`, `index-16-11-2023.html` and `gpt-index2.html` used to sit
+in this directory and were served publicly. They have been deleted — nothing linked
+to them, and they were duplicates: the first was 97% contained in `index.html` and
+shared its exact `<title>` (competing for the same query), the third was fully
+contained, and the second was a 773 KB scraped copy of a *sefer.org.il* bookshop
+page whose canonical pointed at that shop's product page for a different book.
+They now 404, which is the correct signal for removing them from the index.
 
-An earlier version of this site was a Flask + AngularJS application. It is no
-longer deployed and has been retired; this static page replaced it.
+They are recoverable from git history if ever needed.
+
+### Predecessor
+
+An earlier version of this site was a Flask + AngularJS app in a separate repo. It
+is retired and not deployed. Its history is archived at
+`~/repos2/_archive/menorat_hamaor-flask-9aff049.bundle` (restore with `git clone`).
+That app had a hard-coded `SECRET_KEY` committed to its history — treat it as
+compromised and do not reuse it.
 
 ## Editing notes
 

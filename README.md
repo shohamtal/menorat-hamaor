@@ -49,8 +49,13 @@ Two things in `index.html` are load-bearing and easy to break:
   float/translate maths; letting it inherit RTL pushes every slide off-screen and
   the cover silently disappears.
 - **`.carousel` has a fixed `height: 400px`.** Before slick initialises, the three
-  400px images stack vertically (~1200px) and then collapse to a single 400px row.
-  Reserving the height keeps Cumulative Layout Shift at 0 instead of 0.27.
+  images stack vertically and then collapse to a single 400px row. Reserving the
+  height keeps Cumulative Layout Shift at 0 instead of 0.27.
+- **Each slide is a wrapper `<div class="slide">`, not a bare `<img>`.** Slick writes
+  the slide width as an inline style onto the direct children of `.carousel`; with
+  bare images it stretched every cover to 600px and distorted the portrait ones.
+  Images are sized with `max-height`/`max-width` so they keep their proportions at
+  any viewport width.
 
 The jQuery and slick assets are pinned with Subresource Integrity hashes. If you
 bump a version you must recompute the hash, or the browser will silently refuse to

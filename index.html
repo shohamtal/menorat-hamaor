@@ -26,8 +26,8 @@
         content="ספר מנורת המאור לרבנו יצחק אבוהב הספרדי – מנוקד בניקוד תימני, מפורש ומבואר בעברית בת ימינו מאת ציון טל (בוטא). כ-120 פרקים לפי פרשות השבוע והמועדים.">
   <meta property="og:url" content="https://menorat-hamaor.co.il/">
   <meta property="og:image" content="https://menorat-hamaor.co.il/images/1.png">
-  <meta property="og:image:width" content="346">
-  <meta property="og:image:height" content="479">
+  <meta property="og:image:width" content="692">
+  <meta property="og:image:height" content="958">
   <meta property="og:image:alt" content="כריכת הספר מנורת המאור מפורש ומבואר">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="מנורת המאור מפורש ומבואר בניקוד תימני | ציון טל (בוטא)">
@@ -108,6 +108,13 @@
     .page p {
         margin: auto;
     }
+    .order { margin: 2em 0; padding: 1em 1.2em; border: 2px solid #4CAF50; border-radius: 10px; background: #f6fbf6; text-align: center; }
+    .order-actions { display: flex; flex-wrap: wrap; gap: 0.6em; justify-content: center; }
+    .order-btn { display: inline-block; padding: 0.6em 1.1em; border-radius: 8px; color: #fff; font-weight: 700; text-decoration: none; }
+    .order-btn.whatsapp { background: #1f8f4e; }
+    .order-btn.phone { background: #2f5f8a; }
+    .site-footer { width: 100%; text-align: center; padding: 0.8em 0; margin-top: 0.6em; border-top: 1px solid rgba(0,0,0,0.15); font-size: 0.95em; }
+    .footer-label { font-weight: 700; }
   </style>
 
   <script type="application/ld+json">
@@ -270,7 +277,7 @@
 
 כל הזכויות שמורות למו"ל - טל ציון; רחוב נטעים 35 הוד השרון
 
-                                      להפצה ניתן לפנות בטלפונים:  09-7401112  054-7334550
+                                      להפצה ניתן לפנות בטלפונים:  <a href="tel:+97297401112">09-7401112</a>  <a href="tel:+972547334550">054-7334550</a>
 
               על פי דין תורתנו הקדושה ולהבדיל על פי הזכויות הבינלאומיות אין להעתיק ו/או לצלם
 
@@ -398,6 +405,16 @@
         <a href="demo/vayikra.pdf" target="_blank" rel="noopener" title="מנורת המאור מבואר – פרשת ויקרא (PDF)">פרשת ויקרא</a>
       </p>
 
+      <section class="order" aria-labelledby="order-title">
+        <h2 id="order-title">להזמנת הספר</h2>
+        <p>להזמנת הספר ניתן לפנות אליי בטלפון או בוואטסאפ:</p>
+        <p class="order-actions">
+          <a class="order-btn whatsapp" href="https://wa.me/972547334550?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%90%D7%AA%20%D7%94%D7%A1%D7%A4%D7%A8%20%D7%9E%D7%A0%D7%95%D7%A8%D7%AA%20%D7%94%D7%9E%D7%90%D7%95%D7%A8" target="_blank" rel="noopener">וואטסאפ 054-7334550</a>
+          <a class="order-btn phone" href="tel:+972547334550">טלפון 054-7334550</a>
+          <a class="order-btn phone" href="tel:+97297401112">טלפון 09-7401112</a>
+        </p>
+      </section>
+
       <h2>לצפייה בהסכמות לספר</h2>
       <p>
         <a href="demo/haskamot-razabi.pdf" target="_blank" rel="noopener" title="הסכמת הרב יצחק רצאבי לספר מנורת המאור (PDF)">הסכמת הרב רצאבי</a><span> | </span>
@@ -408,6 +425,10 @@
       </p>
     </div>
 </main>
+
+  <footer class="site-footer">
+    <span class="footer-label">אתרים קהילתיים: </span><a href="https://temanipedia.co.il/" target="_blank" rel="noopener">ויקי תימניפדיה</a> · <a href="https://www.shulchan-aruch.co.il/" target="_blank" rel="noopener">ויקי שולחן ערוך המקוצר</a>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
           integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
